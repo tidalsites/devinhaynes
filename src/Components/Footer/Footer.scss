@@ -1,0 +1,15 @@
+@use "../../Styles/Colors.scss" as c;
+
+.Footer {
+  width: 100vw;
+  background: c.$black;
+  color: c.$white;
+
+  &__wrapper {
+    max-width: 60em;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}

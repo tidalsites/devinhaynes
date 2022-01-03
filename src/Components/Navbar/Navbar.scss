@@ -1,0 +1,30 @@
+@use "../../Styles/Colors.scss" as c;
+
+.Navbar {
+  width: 100%;
+  background: c.$black;
+  color: c.$white;
+
+  &__wrapper {
+    max-width: 60em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    aspect-ratio: 1;
+    width: 50px;
+  }
+
+  &__links {
+    flex-grow: 1;
+    justify-content: flex-end;
+
+    ul {
+      justify-content: flex-end;
+    }
+  }
+}
