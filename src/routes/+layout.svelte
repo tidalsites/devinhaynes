@@ -37,9 +37,10 @@
 			padding-block: 1rem;
 			text-transform: uppercase;
 			color: var(--dark-gray);
+			font-weight: bold;
 
 			&[data-active='true'] {
-				border-bottom: 8px solid var(--primary-color);
+				border-bottom: 4px solid var(--primary-color);
 				color: var(--primary-color);
 			}
 		}
@@ -58,5 +59,6 @@
 		max-width: var(--max-content-width);
 		margin-inline: auto;
 		padding-block: 3rem;
+		padding-inline: 1rem;
 	}
 </style>

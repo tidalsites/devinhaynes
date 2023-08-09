@@ -16,7 +16,7 @@
 				<h1>Hi, I'm Devin</h1>
 			</div>
 			<div class="bubble dark">
-				<p>I love writing custom websites</p>
+				<p>UI/UX Developer</p>
 			</div>
 		</div>
 	</div>
@@ -56,7 +56,7 @@
 
 	.bubble {
 		box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.5);
-		border-radius: 2rem;
+		border-radius: var(--border-radius);
 		padding: 2rem;
 		width: fit-content;
 		outline: 4px solid var(--dark-gray);
@@ -99,6 +99,7 @@
 		& p {
 			font-size: 2rem;
 			padding-bottom: 1rem;
+			padding-inline: 1rem;
 			border-bottom: 2px solid var(--primary-color);
 			position: relative;
 		}
@@ -119,9 +120,14 @@
 
 	.cta__links {
 		display: flex;
-		justify-content: space-around;
+		justify-content: center;
+		gap: 0.5rem;
 		padding-block: 2rem;
 		font-size: 1.25rem;
+
+		& a {
+			text-decoration: underline;
+		}
 	}
 
 	@media (min-width: 37em) {
