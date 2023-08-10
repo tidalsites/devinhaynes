@@ -2,12 +2,15 @@
 	// Images
 	import concrecalWebsite from '$lib/assets/concrecal-web.png';
 	import tidalsitesWebsite from '$lib/assets/tidalsites-web.png';
+	import foursquareWebsite from '$lib/assets/foursquare-web.png';
 
 	// Icons
 	import reactLogo from '$lib/assets/icons/react-logo.png';
 	import sassLogo from '$lib/assets/icons/sass-logo.png';
 	import awsLogo from '$lib/assets/icons/aws-logo.png';
 	import nextLogo from '$lib/assets/icons/Nextjs-logo.png';
+	import svelteLogo from '$lib/assets/icons/svelte-logo.png';
+	import pythonLogo from '$lib/assets/icons/python-logo.png';
 </script>
 
 <svelte:head>
@@ -15,6 +18,37 @@
 </svelte:head>
 
 <h1>Check out what I've been up to</h1>
+
+<div class="portfolio__section">
+	<div class="top">
+		<div class="portfolio__copy">
+			<p>
+				Four Square ROI is a calculator that is used to determine potential Return on Investment for
+				an investment property. This calculator utilized a method know as the "Four Square" method.
+			</p>
+			<div class="portfolio__links">
+				<a href="https://github.com/tidalsites/tidalsites" target="_blank" class="primary">Github</a
+				>
+				<a href="https://www.tidalsites.com" target="_blank" class="ghost">Website</a>
+			</div>
+		</div>
+		<div class="portfolio__img">
+			<img src={foursquareWebsite} alt="Four Square Calc" />
+		</div>
+	</div>
+
+	<div class="tags">
+		<div class="img-wrapper">
+			<img src={svelteLogo} alt="Svelte" />
+		</div>
+		<div class="img-wrapper">
+			<img src={pythonLogo} alt="Python" />
+		</div>
+		<div class="img-wrapper">
+			<img src={awsLogo} alt="AWS" />
+		</div>
+	</div>
+</div>
 
 <div class="portfolio__section">
 	<div class="top">
