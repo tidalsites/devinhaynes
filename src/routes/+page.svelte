@@ -23,11 +23,13 @@
 
 	<div class="bottom">
 		<div class="cta">
-			<p>Get to know me</p>
+			<p>
+				I am a U.S. based Frontend Developer. I love building websites and webapps using modern
+				frameworks, such as React and Svelte.
+			</p>
 			<div class="cta__links">
-				<a href="/about">Personal</a>
-				<span>OR</span>
-				<a href="/portfolio">Professional</a>
+				<a href="/portfolio">See My Work</a>
+				<a class="ghost" href="https://github.com/devinhaynes">View my Github</a>
 			</div>
 		</div>
 	</div>
@@ -97,37 +99,29 @@
 
 	.cta {
 		& p {
-			font-size: 2rem;
-			padding-bottom: 1rem;
-			padding-inline: 1rem;
-			border-bottom: 2px solid var(--primary-color);
-			position: relative;
+			max-width: 50ch;
+			line-height: 1.6;
 		}
-	}
-
-	.cta > p::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		height: 0.75rem;
-		width: 0.75rem;
-		background-color: var(--primary-color);
-		border-radius: 50%;
-		transform: translate(-50%, 50%);
-		outline: 4px solid var(--bg-color);
 	}
 
 	.cta__links {
 		display: flex;
-		justify-content: center;
-		gap: 0.5rem;
+		gap: 1rem;
 		padding-block: 2rem;
-		font-size: 1.25rem;
 
 		& a {
-			text-decoration: underline;
+			border-radius: var(--border-radius);
+			background-color: var(--primary-color);
+			color: white;
+			outline: 2px solid var(--primary-color);
+			padding: 0.5rem 0.85rem;
 		}
+	}
+
+	.cta__links a.ghost {
+		background-color: var(--bg-color);
+		color: var(--primary-color);
+		outline: 2px solid var(--primary-color);
 	}
 
 	@media (min-width: 37em) {

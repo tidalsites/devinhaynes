@@ -123,7 +123,7 @@
 	.portfolio__section {
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 10rem;
+		margin-bottom: 7rem;
 	}
 
 	.top {
@@ -164,7 +164,6 @@
 		}
 	}
 
-	button,
 	a {
 		padding: 0.5rem 0.85rem;
 		border-radius: var(--border-radius);
