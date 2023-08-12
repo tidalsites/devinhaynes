@@ -1,14 +1,9 @@
 <script>
 	import '../app.css';
 	import { page } from '$app/stores';
-
-	import logo from '$lib/assets/devin-logo.svg';
 </script>
 
 <nav>
-	<a class="logo" href="/">
-		<img src={logo} alt="Devin" />
-	</a>
 	<div class="links-group">
 		<a data-active={$page.url.pathname === '/'} href="/">Home</a>
 		<a data-active={$page.url.pathname === '/about'} href="/about">About</a>
@@ -25,7 +20,7 @@
 		padding-inline: 1rem;
 		display: flex;
 		align-items: flex-end;
-		justify-content: space-between;
+		justify-content: flex-end;
 		gap: 1rem;
 	}
 
@@ -43,15 +38,6 @@
 				border-bottom: 4px solid var(--primary-color);
 				color: var(--primary-color);
 			}
-		}
-	}
-
-	.logo {
-		height: calc(50px + 2rem);
-		padding-block: 1rem;
-
-		& img {
-			max-height: 100%;
 		}
 	}
 
