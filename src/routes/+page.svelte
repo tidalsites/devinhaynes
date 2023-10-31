@@ -25,7 +25,7 @@
 		<div class="cta">
 			<p>
 				I am a U.S. based Frontend Developer. I love building websites and webapps using modern
-				frameworks, such as React and Svelte.
+				Javascript frameworks, such as React, Next, and Svelte.
 			</p>
 			<div class="cta__links">
 				<a href="/portfolio">See My Work</a>
