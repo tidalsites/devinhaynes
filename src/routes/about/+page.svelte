@@ -1,6 +1,10 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 
+	import { timelineData } from '../../data/timeline';
+	import CustomTimelineItem from '$lib/ components/CustomTimelineItem.svelte';
+	import { Timeline } from 'svelte-vertical-timeline';
+
 	export let data: PageData;
 </script>
 
@@ -11,26 +15,26 @@
 <h1>A little bit about me</h1>
 <h2>Background</h2>
 
-<div class="background">
-	<p>I began my IT journey by joining the U.S. Navy.</p>
-	<p>
-		Here I learned Systems Adminstration and Network Adminstration, focusing heavily on Linux
-		Systems.
-	</p>
-	<p>
-		After leaving the Navy, I finished my degree in Computer Science, with a major in Software
-		Development.
-	</p>
-	<p>
-		During this time, I found a passion for web development and got my first Software Development
-		job as a Full-Stack developer working with the PERN Stack.
-	</p>
-	<p>
-		I have had the privilege of working with several great companies, have done some freelancing,
-		primarily working on React-based projects.
-	</p>
-	<p>I still have a long way to go on my journey, but I am enjoying the ride!</p>
-</div>
+<Timeline position="alternate">
+	{#each timelineData as item, i}
+		{#if i === timelineData.length - 1}
+			<CustomTimelineItem
+				header={item.header}
+				content={item.content}
+				imgSrc={item.imgSrc}
+				imgAlt={item.imgAlt}
+				isLast={true}
+			/>
+		{:else}
+			<CustomTimelineItem
+				header={item.header}
+				content={item.content}
+				imgSrc={item.imgSrc}
+				imgAlt={item.imgAlt}
+			/>
+		{/if}
+	{/each}
+</Timeline>
 
 <h2>Skills</h2>
 <ul>
@@ -51,6 +55,7 @@
 	<li>MongoDB</li>
 	<li>Agile</li>
 	<li>REST</li>
+	<li>Tailwind</li>
 </ul>
 
 <style>
@@ -59,10 +64,7 @@
 	}
 	h2 {
 		margin-bottom: 2rem;
-	}
-
-	.background {
-		margin-bottom: 5rem;
+		margin-top: 4rem;
 	}
 
 	p {
@@ -74,7 +76,9 @@
 	ul {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 		gap: 1rem;
+		max-width: 50em;
 	}
 
 	li {
