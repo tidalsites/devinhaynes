@@ -3,6 +3,7 @@
 	import concrecalWebsite from '$lib/assets/concrecal-web.png';
 	import tidalsitesWebsite from '$lib/assets/tidalsites-web.png';
 	import foursquareWebsite from '$lib/assets/foursquare-web.png';
+	import elevatorWebsite from '$lib/assets/elevator-web.png';
 
 	// Icons
 	import reactLogo from '$lib/assets/icons/react-logo.png';
@@ -11,6 +12,7 @@
 	import nextLogo from '$lib/assets/icons/Nextjs-logo.png';
 	import svelteLogo from '$lib/assets/icons/svelte-logo.png';
 	import pythonLogo from '$lib/assets/icons/python-logo.png';
+	import tailwindLogo from '$lib/assets/icons/tailwind-logo.svg';
 </script>
 
 <svelte:head>
@@ -18,6 +20,39 @@
 </svelte:head>
 
 <h1>Check out what I've been up to</h1>
+
+<div class="portfolio__section">
+	<div class="top">
+		<div class="portfolio__copy">
+			<p>
+				Elevator.ai is an AI-powered resume generator that builds professional resumes in an
+				instant.
+			</p>
+			<div class="portfolio__links">
+				<a href="https://github.com/devinhaynes/resume-builder" target="_blank" class="primary"
+					>Github</a
+				>
+				<a
+					href="https://resume-builder-pvlr280gm-devinhaynes-projects.vercel.app/"
+					target="_blank"
+					class="ghost">Website</a
+				>
+			</div>
+		</div>
+		<div class="portfolio__img">
+			<img src={elevatorWebsite} alt="Elevator.ai" />
+		</div>
+	</div>
+
+	<div class="tags">
+		<div class="img-wrapper">
+			<img src={nextLogo} alt="NextJS" />
+		</div>
+		<div class="img-wrapper">
+			<img class="svg" src={tailwindLogo} alt="Tailwind" />
+		</div>
+	</div>
+</div>
 
 <div class="portfolio__section">
 	<div class="top">
@@ -197,6 +232,10 @@
 		& img {
 			max-width: 100%;
 		}
+	}
+
+	.svg {
+		width: 50px;
 	}
 
 	@media (min-width: 55em) {

@@ -28,8 +28,8 @@
 				Javascript frameworks, such as React, Next, and Svelte.
 			</p>
 			<div class="cta__links">
-				<a href="/portfolio">See My Work</a>
-				<a class="ghost" href="https://github.com/devinhaynes">View my Github</a>
+				<a href="/portfolio" target="_blank">See My Work</a>
+				<a class="ghost" href="https://github.com/devinhaynes" target="_blank">View my Github</a>
 			</div>
 		</div>
 	</div>

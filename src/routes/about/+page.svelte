@@ -1,11 +1,7 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-
 	import { timelineData } from '../../data/timeline';
 	import CustomTimelineItem from '$lib/ components/CustomTimelineItem.svelte';
 	import { Timeline } from 'svelte-vertical-timeline';
-
-	export let data: PageData;
 </script>
 
 <svelte:head>
@@ -23,7 +19,6 @@
 				content={item.content}
 				imgSrc={item.imgSrc}
 				imgAlt={item.imgAlt}
-				isLast={true}
 			/>
 		{:else}
 			<CustomTimelineItem
@@ -65,12 +60,6 @@
 	h2 {
 		margin-bottom: 2rem;
 		margin-top: 4rem;
-	}
-
-	p {
-		line-height: 1.6;
-		max-width: 50ch;
-		margin-bottom: 1rem;
 	}
 
 	ul {

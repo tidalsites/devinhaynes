@@ -12,7 +12,6 @@
 	export let content: string;
 	export let imgSrc: string;
 	export let imgAlt: string;
-	export let isLast: boolean = false;
 </script>
 
 <TimelineItem
