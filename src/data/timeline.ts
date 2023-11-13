@@ -1,12 +1,19 @@
 import navyLogo from '$lib/assets/navy-logo.svg';
 import ecpiLogo from '$lib/assets/ecpi.png';
 import codeLogo from '$lib/assets/code.png';
+import tidalsitesLogo from '$lib/assets/logo-white.png';
+
+export type CtaObject = {
+	text: string;
+	link: string;
+};
 
 type TimelineData = {
 	header: string;
 	content: string;
 	imgSrc: string;
 	imgAlt: string;
+	cta?: CtaObject;
 };
 
 export const timelineData: TimelineData[] = [
@@ -30,5 +37,16 @@ export const timelineData: TimelineData[] = [
 			'After completing my degree, I got my first Software Development job as a Full-Stack developer working with the PERN Stack. Since my first job as a junior developer, I have had the privilege of working with several great companies and have done some freelancing, primarily working on React-based projects.',
 		imgSrc: codeLogo,
 		imgAlt: 'Software Developer'
+	},
+	{
+		header: 'Tidal Sites',
+		content:
+			'As part of my freelance journey, I created a web design business to serve local clients. I use this to work on passion projects and improve both my design skills and business acumen.',
+		imgSrc: tidalsitesLogo,
+		imgAlt: 'Tidal Sites',
+		cta: {
+			text: 'View Website',
+			link: 'https://tidalsites.com'
+		}
 	}
 ];

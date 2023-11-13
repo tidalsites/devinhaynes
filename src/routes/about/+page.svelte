@@ -13,21 +13,13 @@
 
 <Timeline position="alternate">
 	{#each timelineData as item, i}
-		{#if i === timelineData.length - 1}
-			<CustomTimelineItem
-				header={item.header}
-				content={item.content}
-				imgSrc={item.imgSrc}
-				imgAlt={item.imgAlt}
-			/>
-		{:else}
-			<CustomTimelineItem
-				header={item.header}
-				content={item.content}
-				imgSrc={item.imgSrc}
-				imgAlt={item.imgAlt}
-			/>
-		{/if}
+		<CustomTimelineItem
+			header={item.header}
+			content={item.content}
+			imgSrc={item.imgSrc}
+			imgAlt={item.imgAlt}
+			cta={item.cta}
+		/>
 	{/each}
 </Timeline>
 

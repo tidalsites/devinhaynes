@@ -4,6 +4,7 @@
 	import github from '$lib/assets/icons/github.svg';
 	import linkedin from '$lib/assets/icons/linkedin.svg';
 	import email from '$lib/assets/icons/email.svg';
+	import tidalsites from '$lib/assets/logo.png';
 </script>
 
 <nav>
@@ -29,15 +30,36 @@
 <main>
 	<slot />
 </main>
+<footer>
+	<div class="wrapper">
+		<a class="tidalsites" href="https://tidalsites.com" target="_blank">
+			<img src={tidalsites} alt="Tidal Sites" />
+			<span aria-hidden="true">Tidal Sites</span>
+		</a>
+		<div>
+			<a href="mailto:dhaynes916@gmail.com" target="_blank">
+				<img src={email} alt="email" />
+			</a>
+			<a href="https://github.com/devinhaynes" target="_blank">
+				<img src={github} alt="github" />
+			</a>
+
+			<a href="https://www.linkedin.com/in/devin-haynes/" target="_blank">
+				<img src={linkedin} alt="linkedin" />
+			</a>
+		</div>
+	</div>
+</footer>
 
 <style>
 	nav {
 		padding-inline: 1rem;
 		display: flex;
 		align-items: flex-end;
-		justify-content: flex-end;
+		justify-content: space-between;
 		gap: 1rem;
 		max-width: 100em;
+		margin-inline: auto;
 	}
 
 	.links-group {
@@ -62,26 +84,55 @@
 		margin-inline: auto;
 		padding-block: 3rem;
 		padding-inline: 1rem;
+		min-height: calc(100vh - 55px - 42px);
 	}
 
 	.social-icons {
-		background-color: white;
-		padding: 0.5rem 1rem;
 		display: flex;
-		gap: 0.5rem 1rem;
-		margin-block: 0.25rem;
-		border-radius: 1rem;
-		box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
-		height: 55px;
-		transform: translateY(6px);
-	}
-
-	.social-icons > a {
-		border: none;
-		background-color: white;
+		gap: 0.5rem;
+		padding-bottom: 0.5rem;
 	}
 
 	.social-icons > a > img {
-		height: 35px;
+		height: 30px;
+	}
+
+	footer {
+		box-shadow: -2px 0 2px 1px rgba(0, 0, 0, 0.65);
+		padding-block: 0.25rem;
+		padding-inline: 1rem;
+		width: 100vw;
+		bottom: 0;
+
+		& .wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			max-width: 100em;
+			margin-inline: auto;
+
+			& > div {
+				display: flex;
+				gap: 1rem;
+			}
+		}
+
+		& img {
+			height: 30px;
+		}
+
+		& .tidalsites {
+			display: flex;
+			align-items: center;
+			gap: 4px;
+
+			& > span {
+				font-size: 1.3rem;
+				color: #333;
+				font-weight: bold;
+				font-family: Rubik, Fira-Sans, sans-serif;
+			}
+		}
 	}
 </style>

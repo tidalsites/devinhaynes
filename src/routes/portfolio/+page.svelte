@@ -205,7 +205,14 @@
 		box-shadow: none;
 		border: none;
 		outline: 2px solid var(--primary-color);
+		outline-offset: -2px;
 		font-size: 0.85rem;
+		transition: outline-offset ease-in-out 150ms;
+	}
+
+	a:hover,
+	a:focus {
+		outline-offset: 2px;
 	}
 
 	.primary {
