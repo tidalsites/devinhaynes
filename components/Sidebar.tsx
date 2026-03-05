@@ -9,7 +9,7 @@ import { Nav } from "./Nav";
 
 export const Sidebar = () => {
   return (
-    <aside className=" w-fit py-4 px-12 shadow-[1px_0_4px_var(--background)] z-20 bg-neutral-950">
+    <aside className=" w-fit py-4 px-12 shadow-[1px_0_4px_var(--background)] z-20 bg-neutral-950 h-screen top-0 sticky">
       <div className="flex flex-col gap-4 sticky top-4 h-full">
         <Image
           className="rounded-full outline outline-foreground mx-auto mb-16"

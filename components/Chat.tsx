@@ -1,34 +1,17 @@
 "use client";
 
-import {
-  PromptInput,
-  PromptInputTextarea,
-  PromptInputButton,
-  PromptInputSubmit,
-  PromptInputMessage,
-} from "@/components/ai-elements/prompt-input";
-import {
-  Conversation,
-  ConversationContent,
-} from "@/components/ai-elements/conversation";
-import {
-  Message,
-  MessageContent,
-  MessageResponse,
-} from "@/components/ai-elements/message";
-import { useBedrockChat } from "@/lib/hooks/useChat";
+import { useChat } from "@/lib/hooks/useChat";
 import { useAudioRecorder } from "@/lib/hooks/useAudioRecorder";
-import { ChangeEvent, useState, useEffect, useRef, SubmitEvent } from "react";
-import { MicIcon, CheckIcon, XIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import Image from "next/image";
+  ChangeEvent,
+  useState,
+  useEffect,
+  useRef,
+  SubmitEventHandler,
+  KeyboardEvent,
+} from "react";
+import { LuMic, LuCheck, LuX, LuCornerDownLeft } from "react-icons/lu";
+import { Message } from "./Message";
 
 export default function Chat() {
   const [input, setInput] = useState("");
@@ -39,9 +22,10 @@ export default function Chat() {
   });
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   // Initialize chat and audio hooks
-  const { messages, sendMessage, error, status } = useBedrockChat(sessionId);
+  const { messages, sendMessage, error, status } = useChat(sessionId);
   const {
     isRecording,
     startRecording,
@@ -64,12 +48,17 @@ export default function Chat() {
     console.error("Audio error:", audioError);
   }
 
-  const handleSubmit = (message: PromptInputMessage) => {
+  const submitMessage = () => {
     if (input.trim()) {
-      sendMessage({ text: message.text });
+      sendMessage({ text: input });
       setInput("");
       inputRef.current?.focus();
     }
+  };
+
+  const handleSubmit: SubmitEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+    submitMessage();
   };
 
   const handleVoiceClick = () => {
@@ -94,6 +83,13 @@ export default function Chat() {
   // Determine if we should show centered layout (no messages)
   const showCentered = messages.length === 0;
 
+  const handleTextAreaReturn = (e: KeyboardEvent) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      submitMessage();
+    }
+  };
+
   // Send transcribed text when speech recognition completes
   useEffect(() => {
     if (transcribedText && transcribedText !== lastSentTranscriptRef.current) {
@@ -110,42 +106,49 @@ export default function Chat() {
 
   return (
     <div className="flex flex-col justify-center h-screen w-full">
+      {showCentered ? (
+        <div className="flex flex-col justify-center items-center w-full max-w-4xl mx-auto h-fit text-4xl text-center mb-24">
+          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+            Hi, I'm Devin.
+          </h1>
+          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            Whether you are here personally or professionally, you can use the
+            chat window below to help guide you to what you are looking for.
+          </p>
+        </div>
+      ) : null}
       {/* Messages area - scrollable */}
       <div className={"overflow-auto"}>
-        <div className="max-w-4xl w-full mx-auto p-4">
-          <Conversation>
-            <ConversationContent>
-              {messages.map((message) => (
-                <Message from={message.role} key={message.id}>
-                  <MessageContent>
-                    {message.parts
-                      .filter((part) => part.type === "text")
-                      .map((part, i) => (
-                        <MessageResponse key={`${message.id}-${i}`}>
-                          {part.text}
-                        </MessageResponse>
-                      ))}
-                  </MessageContent>
-                </Message>
-              ))}
+        <div className="max-w-4xl w-full mx-auto p-4 flex flex-col gap-y-8">
+          {messages.map((message) => (
+            <div key={message.id}>
+              {message.parts
+                .filter((part) => part.type === "text")
+                .map((part, i) => (
+                  <Message
+                    key={`${message.id}-${i}`}
+                    text={part.text}
+                    role={message.role}
+                  />
+                ))}
+            </div>
+          ))}
 
-              {/* Thinking indicator */}
-              {status === "submitted" && (
-                <Message from="assistant" key="thinking">
-                  <div className="flex items-end gap-2 text-muted-foreground">
-                    <span className="text-sm">Thinking</span>
-                    <div className="flex gap-1 mb-1">
-                      <div className="w-0.5 h-0.5 bg-current rounded-full animate-bounce [animation-delay:0ms]" />
-                      <div className="w-0.5 h-0.5 bg-current rounded-full animate-bounce [animation-delay:150ms]" />
-                      <div className="w-0.5 h-0.5 bg-current rounded-full animate-bounce [animation-delay:300ms]" />
-                    </div>
-                  </div>
-                </Message>
-              )}
+          {/* Thinking indicator */}
+          {status === "submitted" && (
+            <div key="thinking">
+              <div className="flex items-end gap-2 text-muted-foreground">
+                <span className="text-sm">Thinking</span>
+                <div className="flex gap-1 mb-1">
+                  <div className="w-0.5 h-0.5 bg-current rounded-full animate-bounce [animation-delay:0ms]" />
+                  <div className="w-0.5 h-0.5 bg-current rounded-full animate-bounce [animation-delay:150ms]" />
+                  <div className="w-0.5 h-0.5 bg-current rounded-full animate-bounce [animation-delay:300ms]" />
+                </div>
+              </div>
+            </div>
+          )}
 
-              <div ref={conversationEndRef} />
-            </ConversationContent>
-          </Conversation>
+          <div ref={conversationEndRef} />
         </div>
       </div>
 
@@ -164,57 +167,55 @@ export default function Chat() {
               </span>
             </div>
             <div className="flex gap-2">
-              <PromptInputButton
-                variant="outline"
+              <button
                 className="rounded-full h-10 w-10 shrink-0"
                 onClick={handleCancelRecording}
               >
-                <XIcon className="h-4 w-4" />
-              </PromptInputButton>
-              <PromptInputButton
-                variant="default"
+                <LuX className="h-4 w-4" />
+              </button>
+              <button
                 className="rounded-full h-10 w-10 shrink-0"
                 onClick={handleSubmitRecording}
               >
-                <CheckIcon className="h-4 w-4" />
-              </PromptInputButton>
+                <LuCheck className="h-4 w-4" />
+              </button>
             </div>
           </div>
         ) : (
           // Normal input state
-          <div className="flex gap-2 items-start">
-            <PromptInput
-              className="flex gap-2 items-center"
+          <div className="flex gap-2 items-start w-full">
+            <form
               onSubmit={handleSubmit}
+              className="flex gap-x-4 w-full"
+              ref={formRef}
             >
-              <PromptInputTextarea
-                value={input}
+              <textarea
+                placeholder="Ask your questions here"
+                className={`rounded-2xl px-4 py-2 outline-1 outline-neutral-100 resize-none grow field-sizing-content`}
+                ref={inputRef}
                 onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                   setInput(e.currentTarget.value)
                 }
-                placeholder="Type your message..."
-                disabled={status === "submitted"}
-                ref={inputRef}
-                className="rounded-full"
+                onKeyDown={handleTextAreaReturn}
+                value={input}
               />
-            </PromptInput>
-            {input.trim() ? (
-              <PromptInputSubmit
-                variant="outline"
-                disabled={!input.trim() || status === "submitted"}
-                status={status}
-                className="rounded-full h-12 w-12 shrink-0"
-              />
-            ) : (
-              <PromptInputButton
-                variant="outline"
-                className="rounded-full h-12 w-12 shrink-0"
-                onClick={handleVoiceClick}
-                disabled={status === "submitted"}
-              >
-                <MicIcon className="h-5 w-5" />
-              </PromptInputButton>
-            )}
+              {input.trim() ? (
+                <button
+                  type="submit"
+                  className="rounded-full outline-1 outline-neutral-100 p-2 w-10 h-10 grid place-content-center"
+                >
+                  <LuCornerDownLeft className="size-4" />
+                </button>
+              ) : (
+                <button
+                  className="rounded-full h-10 w-10 shrink-0 outline-1 outline-neutral-100 grid place-content-center"
+                  onClick={handleVoiceClick}
+                  disabled={status === "submitted"}
+                >
+                  <LuMic className="size-4" />
+                </button>
+              )}
+            </form>
           </div>
         )}
       </div>

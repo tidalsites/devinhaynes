@@ -7,7 +7,7 @@ interface Message {
   parts: Array<{ type: "text"; text: string }>;
 }
 
-interface UseBedrockChatReturn {
+interface UseChatReturn {
   messages: Message[];
   sendMessage: (params: { text: string }) => Promise<void>;
   status: ChatStatus;
@@ -15,7 +15,7 @@ interface UseBedrockChatReturn {
   setMessages: (messages: Message[]) => void;
 }
 
-export function useBedrockChat(sessionId?: string): UseBedrockChatReturn {
+export function useChat(sessionId?: string): UseChatReturn {
   const [messages, setMessages] = useState<Message[]>([]);
   const [status, setStatus] = useState<ChatStatus>("ready");
   const [error, setError] = useState<Error | undefined>();

@@ -10,6 +10,8 @@ export async function POST(req: Request) {
   try {
     const { messages, sessionId }: RequestData = await req.json();
 
+    console.log(`Message: \n ${JSON.stringify(messages)}`);
+
     // Extract the last user message
     const lastMessage = messages[messages.length - 1];
 
@@ -31,8 +33,8 @@ export async function POST(req: Request) {
       sessionId: sessionId,
     };
 
-    console.log(process.env.BEDROCK_AGENT_ID || "No agent id");
     const response = await sendMessageToBedrockAgent(messageText, agentConfig);
+    console.log(response);
 
     return new Response(
       JSON.stringify({
