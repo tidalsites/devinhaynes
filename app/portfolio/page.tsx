@@ -6,7 +6,7 @@ import xprt from "../../public/xprt-web-min.png";
 import prosoft from "../../public/prosoft-web-min.png";
 import harts from "../../public/hartshollergraphics-web-min.png";
 import olokun from "../../public/olokun-web.webp";
-import { Sidebar } from "../components/Sidebar";
+import { Sidebar } from "../../components/Sidebar";
 
 export default function Portfolio() {
   return (

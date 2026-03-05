@@ -1,5 +1,5 @@
-import { HiArrowRightCircle } from "react-icons/hi2";
-import { Sidebar } from "./components/Sidebar";
+import { Sidebar } from "../components/Sidebar";
+import Chat from "@/components/Chat";
 
 export default function Home() {
   return (
@@ -16,18 +16,7 @@ export default function Home() {
               chat window below to help guide you to what you are looking for.
             </p>
           </div>
-          <div className="flex sm:flex-row w-full max-w-3xl">
-            <div className="flex gap-2 w-full">
-              <input
-                autoFocus
-                className="bg-background rounded-full w-full max-w-3xl px-4 py-3 focus:outline-gray-400 focus:outline-1 h-10.5"
-                type="text"
-              />
-              <button className="text-4xl" aria-label="Submit">
-                <HiArrowRightCircle />
-              </button>
-            </div>
-          </div>
+          <Chat />
         </div>
       </main>
     </div>
