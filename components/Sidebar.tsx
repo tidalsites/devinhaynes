@@ -9,10 +9,10 @@ import { Nav } from "./Nav";
 
 export const Sidebar = () => {
   return (
-    <aside className=" w-fit py-4 px-12 shadow-[1px_0_4px_var(--background)] z-20 bg-neutral-950 h-screen top-0 sticky">
+    <aside className="w-62.5 py-4 px-12 z-20 bg-neutral-950 h-screen top-0 sticky border-r border-r-neutral-800">
       <div className="flex flex-col gap-4 sticky top-4 h-full">
         <Image
-          className="rounded-full outline outline-foreground mx-auto mb-16"
+          className="rounded-full outline outline-neutral-800 mx-auto mb-16"
           src="/profile.png"
           alt="Next.js logo"
           width={150}

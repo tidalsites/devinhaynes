@@ -10,8 +10,10 @@ import {
   SubmitEventHandler,
   KeyboardEvent,
 } from "react";
-import { LuMic, LuCheck, LuX, LuCornerDownLeft } from "react-icons/lu";
+import { LuMic, LuCheck, LuX, LuCornerDownLeft, LuTrash } from "react-icons/lu";
 import { Message } from "./Message";
+
+type Suggestion = "professional summary" | "hobbies" | "contact";
 
 export default function Chat() {
   const [input, setInput] = useState("");
@@ -92,6 +94,23 @@ export default function Chat() {
     }
   };
 
+  const handleSuggestionClick = (suggestion: Suggestion) => {
+    switch (suggestion) {
+      case "professional summary":
+        sendMessage({
+          text: "Can you summarize Devin Haynes' professional career?",
+        });
+        break;
+      case "hobbies":
+        sendMessage({ text: "What are Devin Haynes' hobbies?" });
+        break;
+      case "contact":
+        sendMessage({ text: "How can I contact Devin Haynes?" });
+        break;
+      default:
+        break;
+    }
+  };
   // Send transcribed text when speech recognition completes
   useEffect(() => {
     if (transcribedText && transcribedText !== lastSentTranscriptRef.current) {
@@ -109,11 +128,11 @@ export default function Chat() {
   return (
     <div className="flex flex-col justify-center h-full w-full">
       {showCentered ? (
-        <div className="flex flex-col justify-center items-center w-full max-w-4xl mx-auto h-fit text-4xl text-center mb-24">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+        <div className="flex flex-col gap-2 justify-center w-fit max-w-4xl mx-auto h-fit text-4xl mb-24">
+          <h1 className="relative before:absolute before:inset-0 before:bg-radial-[ellipse_at_center,rgba(128,128,128,.25)_0%,rgba(80,140,236,.5)_70%] before:blur-2xl w-fit text-4xl font-semibold leading-10 tracking-tight flex justify-between bg-linear-to-r from-sky-500 via-sky-500/80 to-sky-500 bg-clip-text text-transparent">
             Hi, I'm Devin.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+          <p className="max-w-md text-lg leading-8 text-neutral-600 dark:text-neutral-300">
             Explore this site or ask the chatbot anything about me, my projects,
             or anything else you're curious about!
           </p>
@@ -156,6 +175,15 @@ export default function Chat() {
 
       {/* Input area - fixed at bottom */}
       <div className="max-w-4xl w-full mx-auto p-4">
+        {messages.length > 0 && (
+          <button
+            onClick={resetChat}
+            className="px-2 py-1 rounded-lg bg-red-800 outline outline-neutral-800 hover:bg-red-900 text-sm text-foreground flex items-center gap-1 ml-auto mb-4"
+          >
+            <span>Reset Chat</span>
+            <LuTrash className="size-4 ml-1" />
+          </button>
+        )}
         {isRecording ? (
           // Recording state UI
           <div className="flex gap-2 items-center bg-card rounded-full border py-2 px-4">
@@ -172,12 +200,14 @@ export default function Chat() {
               <button
                 className="rounded-full h-10 w-10 shrink-0"
                 onClick={handleCancelRecording}
+                aria-label="cancel recording"
               >
                 <LuX className="h-4 w-4" />
               </button>
               <button
                 className="rounded-full h-10 w-10 shrink-0"
                 onClick={handleSubmitRecording}
+                aria-label="submit recording"
               >
                 <LuCheck className="h-4 w-4" />
               </button>
@@ -193,7 +223,7 @@ export default function Chat() {
             >
               <textarea
                 placeholder="Ask your questions here"
-                className={`rounded-2xl px-4 py-2 outline-1 outline-neutral-100 resize-none grow field-sizing-content`}
+                className={`rounded-2xl px-4 py-2 outline-1 outline-neutral-800 resize-none grow field-sizing-content`}
                 ref={inputRef}
                 onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                   setInput(e.currentTarget.value)
@@ -204,15 +234,17 @@ export default function Chat() {
               {input.trim() ? (
                 <button
                   type="submit"
-                  className="rounded-full outline-1 outline-neutral-100 p-2 w-10 h-10 grid place-content-center"
+                  className="rounded-full outline-1 outline-neutral-800 p-2 w-10 h-10 grid place-content-center"
+                  aria-label="submit"
                 >
                   <LuCornerDownLeft className="size-4" />
                 </button>
               ) : (
                 <button
-                  className="rounded-full h-10 w-10 shrink-0 outline-1 outline-neutral-100 grid place-content-center"
+                  className="text-neutral-400 rounded-full h-10 w-10 shrink-0 outline-1 outline-neutral-800 grid place-content-center hover:bg-slate-800 hover:text-foreground"
                   onClick={handleVoiceClick}
                   disabled={status === "submitted"}
+                  aria-label="start voice recording"
                 >
                   <LuMic className="size-4" />
                 </button>
@@ -220,15 +252,28 @@ export default function Chat() {
             </form>
           </div>
         )}
-        <div className="my-4">
-          {messages.length > 0 && (
+
+        <div className="my-4 flex gap-x-2 justify-between">
+          <div className="flex gap-x-2">
             <button
-              onClick={resetChat}
-              className="px-2 py-1 rounded-lg bg-neutral-800"
+              onClick={() => handleSuggestionClick("professional summary")}
+              className="px-2 py-1 rounded-lg outline outline-neutral-800 hover:bg-slate-800 text-sm text-foreground flex items-center gap-1"
             >
-              Reset Chat
+              <span>Summarize Devin's professional career</span>
             </button>
-          )}
+            <button
+              onClick={() => handleSuggestionClick("hobbies")}
+              className="px-2 py-1 rounded-lg outline outline-neutral-800 hover:bg-slate-800 text-sm text-foreground flex items-center gap-1"
+            >
+              <span>What are Devin's hobbies?</span>
+            </button>
+            <button
+              onClick={() => handleSuggestionClick("contact")}
+              className="px-2 py-1 rounded-lg outline outline-neutral-800 hover:bg-slate-800 text-sm text-foreground flex items-center gap-1"
+            >
+              <span>How can I contact Devin?</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
