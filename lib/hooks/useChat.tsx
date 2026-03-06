@@ -13,6 +13,7 @@ interface UseChatReturn {
   status: ChatStatus;
   error: Error | undefined;
   setMessages: (messages: Message[]) => void;
+  resetChat: () => void;
 }
 
 export function useChat(sessionId?: string): UseChatReturn {
@@ -82,11 +83,18 @@ export function useChat(sessionId?: string): UseChatReturn {
     [messages, sessionId],
   );
 
+  const resetChat = () => {
+    setMessages([]);
+    setStatus("ready");
+    setError(undefined);
+  };
+
   return {
     messages,
     sendMessage,
     status,
     error,
     setMessages,
+    resetChat,
   };
 }

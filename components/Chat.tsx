@@ -25,7 +25,8 @@ export default function Chat() {
   const formRef = useRef<HTMLFormElement>(null);
 
   // Initialize chat and audio hooks
-  const { messages, sendMessage, error, status } = useChat(sessionId);
+  const { messages, sendMessage, error, status, resetChat } =
+    useChat(sessionId);
   const {
     isRecording,
     startRecording,
@@ -83,8 +84,9 @@ export default function Chat() {
   // Determine if we should show centered layout (no messages)
   const showCentered = messages.length === 0;
 
+  // Allow for using the enter key to submit form
   const handleTextAreaReturn = (e: KeyboardEvent) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       submitMessage();
     }
@@ -105,15 +107,15 @@ export default function Chat() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col justify-center h-screen w-full">
+    <div className="flex flex-col justify-center h-full w-full">
       {showCentered ? (
         <div className="flex flex-col justify-center items-center w-full max-w-4xl mx-auto h-fit text-4xl text-center mb-24">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             Hi, I'm Devin.
           </h1>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Whether you are here personally or professionally, you can use the
-            chat window below to help guide you to what you are looking for.
+            Explore this site or ask the chatbot anything about me, my projects,
+            or anything else you're curious about!
           </p>
         </div>
       ) : null}
@@ -218,6 +220,16 @@ export default function Chat() {
             </form>
           </div>
         )}
+        <div className="my-4">
+          {messages.length > 0 && (
+            <button
+              onClick={resetChat}
+              className="px-2 py-1 rounded-lg bg-neutral-800"
+            >
+              Reset Chat
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
