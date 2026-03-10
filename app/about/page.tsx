@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <main className="flex flex-col justify-between min-h-screen grow max-w-7xl gap-12 py-24 px-6 md:px-16 ">
+    <main className="flex flex-col xl:grid xl:grid-cols-2 xl:grid-rows-[auto_1fr_auto] justify-between min-h-screen grow max-w-7xl gap-12 py-24 px-6 md:px-16 ">
       <div>
         <div>
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50 mb-8">
@@ -43,11 +43,11 @@ export default function About() {
         </div>
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col ml-auto row-span-3">
         <h2 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
           Tools & Tech
         </h2>
-        <div className="flex flex-wrap w-fit gap-8 mt-6">
+        <div className="flex flex-wrap xl:flex-col w-fit gap-8 mt-6">
           <ToolCard
             topic="Web Development"
             tools={[

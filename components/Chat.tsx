@@ -128,13 +128,12 @@ export default function Chat() {
   return (
     <div className="flex flex-col justify-between h-full w-full">
       {showCentered ? (
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:relative sm:translate-x-0 sm:translate-y-0 sm:top-auto sm:left-auto flex flex-col gap-2 justify-center w-fit max-w-4xl mx-auto h-fit text-4xl mb-4 md:mb-24">
-          <h1 className="relative before:absolute before:inset-0 before:bg-radial-[ellipse_at_center,rgba(128,128,128,.25)_0%,rgba(80,140,236,.5)_70%] before:blur-2xl w-fit text-4xl font-semibold leading-10 tracking-tight flex justify-between bg-linear-to-r from-sky-500 via-sky-500/80 to-sky-500 bg-clip-text text-transparent">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:relative sm:translate-x-0 sm:translate-y-0 sm:top-auto sm:left-auto flex flex-col gap-2 justify-center w-fit max-w-4xl mx-auto h-fit text-4xl text-center mb-4 md:mb-24">
+          <h1 className="relative before:absolute before:inset-0 before:bg-radial-[ellipse_at_center,rgba(128,128,128,.25)_0%,rgba(80,140,236,.5)_70%] before:blur-2xl w-fit text-4xl mx-auto font-semibold leading-10 tracking-tight bg-linear-to-r from-sky-500 via-sky-500/80 to-sky-500 bg-clip-text text-transparent">
             Hi, I'm Devin.
           </h1>
           <p className="w-[calc(100vw-4rem)] max-w-md text-lg leading-8 text-neutral-600 dark:text-neutral-300">
-            Explore this site or ask the chatbot anything about me, my projects,
-            or anything else you're curious about!
+            What would you like to know?
           </p>
         </div>
       ) : null}
@@ -178,7 +177,7 @@ export default function Chat() {
         {messages.length > 0 && (
           <button
             onClick={resetChat}
-            className="px-2 py-1 rounded-lg bg-red-800 outline outline-neutral-800 hover:bg-red-900 text-sm text-foreground flex items-center gap-1 ml-auto mb-4"
+            className="px-2 py-1 rounded-lg bg-neutral-800 outline outline-neutral-800 hover:bg-red-900 text-sm text-foreground flex items-center gap-1 ml-auto mb-4"
           >
             <span>Reset Chat</span>
             <LuTrash className="size-4 ml-1" />
