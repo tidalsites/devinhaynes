@@ -1,37 +1,116 @@
-import { Sidebar } from "../../components/Sidebar";
+import Link from "next/link";
+import { ToolCard } from "./ToolCard";
+import { Metadata } from "next";
+import { LuGithub, LuArrowRight } from "react-icons/lu";
+
+export const metadata: Metadata = {
+  title: "About Devin Haynes",
+  description:
+    "Devin Haynes is a web developer specializing in modern website design, web applications, and cloud-based systems. He builds fast, scalable websites and software using technologies like React, Next.js, and AWS.",
+};
 
 export default function About() {
   return (
-    <div className="flex min-h-screen bg-zinc-50 font-sans dark:bg-black">
-      <Sidebar />
-      <main className="flex min-h-screen grow flex-col items-center gap-12 py-24 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="flex flex-col justify-between min-h-screen grow max-w-7xl gap-12 py-24 px-6 md:px-16 ">
+      <div>
         <div>
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            About Me
+          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50 mb-8">
+            About Devin Haynes
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Here are a few facts about me.
-          </p>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-2 max-w-prose leading-8">
           <p>
-            My name is Devin Haynes. I am a software engineer and web developer.
-          </p>
-          <p className="max-w-prose">
-            My professional career began in the Navy as an Information Systems
-            Technician. I served 8 years on active duty. My primary taskings
-            involved systems and network administration on a number of different
-            systems. I served another 2 years in the Navy Reserves, while
-            finishing up my bachelors degree in Software Engineering. From here,
-            I dedicated my career to software development - particularly focused
-            on web technologies.
+            Devin Haynes is a web developer and software engineer specializing
+            in modern website design, web application development, and
+            cloud-based systems. He builds high-performance websites and
+            applications using modern JavaScript frameworks and cloud
+            infrastructure.
           </p>
           <p>
-            I love traveling and nature. I am a hiking enthusiast. I also enjoy
-            basketball and chess.
+            Devin focuses on creating fast, responsive, and maintainable
+            websites that provide excellent user experience while meeting real
+            business needs. His work ranges from professional business websites
+            and government contractor platforms to custom web applications and
+            AI-powered interfaces.
+          </p>
+          <p>
+            With experience across both front-end and back-end development,
+            Devin builds systems that balance performance, scalability, and
+            clean architecture. Many of his projects involve improving site
+            performance, modernizing outdated web platforms, and developing
+            custom solutions tailored to client needs.
           </p>
         </div>
-      </main>
-    </div>
+      </div>
+
+      <div className="flex flex-col">
+        <h2 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+          Tools & Tech
+        </h2>
+        <div className="flex flex-wrap w-fit gap-8 mt-6">
+          <ToolCard
+            topic="Web Development"
+            tools={[
+              { name: "React" },
+              { name: "Next.js" },
+              { name: "TypeScript" },
+              { name: "Tailwind CSS" },
+              { name: "Node.js" },
+              { name: "Express" },
+            ]}
+          />
+          <ToolCard
+            topic="Cloud & Infrastructure"
+            tools={[
+              { name: "AWS" },
+              { name: "Docker" },
+              { name: "Terraform" },
+              { name: "CI/CD" },
+              { name: "Azure" },
+              { name: "Vercel" },
+            ]}
+          />
+          <ToolCard
+            topic="Development Tools"
+            tools={[
+              { name: "Git" },
+              { name: "VS Code" },
+              { name: "REST APIs" },
+            ]}
+          />
+        </div>
+      </div>
+      <div className="flex flex-col gap-6">
+        <h2 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+          Projects
+        </h2>
+        <p className="max-w-prose leading-8">
+          Devin has worked on numerous professional and personal projects. You
+          can view his Github here. Or check out his portfolio.
+        </p>
+        <div className="flex gap-2">
+          <a
+            href="https://github.com/devinhaynes"
+            target="_blank"
+            className="outline outline-neutral-800 bg-neutral-900 hover:bg-slate-800 px-4 py-2 rounded-xl flex gap-2 items-center"
+          >
+            <LuGithub />
+            Github
+          </a>
+          <Link
+            href="/portfolio"
+            className="outline outline-neutral-800 bg-neutral-900 hover:bg-slate-800 px-4 py-2 rounded-xl flex gap-2 items-center"
+          >
+            Portfolio
+            <LuArrowRight />
+          </Link>
+        </div>
+      </div>
+      <div className="flex flex-col gap-6">
+        <h2 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+          Get in Touch
+        </h2>
+      </div>
+    </main>
   );
 }

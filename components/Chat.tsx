@@ -126,13 +126,13 @@ export default function Chat() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col justify-center h-full w-full">
+    <div className="flex flex-col justify-between h-full w-full">
       {showCentered ? (
-        <div className="flex flex-col gap-2 justify-center w-fit max-w-4xl mx-auto h-fit text-4xl mb-24">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:relative sm:translate-x-0 sm:translate-y-0 sm:top-auto sm:left-auto flex flex-col gap-2 justify-center w-fit max-w-4xl mx-auto h-fit text-4xl mb-4 md:mb-24">
           <h1 className="relative before:absolute before:inset-0 before:bg-radial-[ellipse_at_center,rgba(128,128,128,.25)_0%,rgba(80,140,236,.5)_70%] before:blur-2xl w-fit text-4xl font-semibold leading-10 tracking-tight flex justify-between bg-linear-to-r from-sky-500 via-sky-500/80 to-sky-500 bg-clip-text text-transparent">
             Hi, I'm Devin.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-neutral-600 dark:text-neutral-300">
+          <p className="w-[calc(100vw-4rem)] max-w-md text-lg leading-8 text-neutral-600 dark:text-neutral-300">
             Explore this site or ask the chatbot anything about me, my projects,
             or anything else you're curious about!
           </p>
@@ -174,7 +174,7 @@ export default function Chat() {
       </div>
 
       {/* Input area - fixed at bottom */}
-      <div className="max-w-4xl w-full mx-auto p-4">
+      <div className="max-w-4xl w-full mx-auto mt-auto sm:p-4">
         {messages.length > 0 && (
           <button
             onClick={resetChat}
@@ -253,8 +253,8 @@ export default function Chat() {
           </div>
         )}
 
-        <div className="my-4 flex gap-x-2 justify-between">
-          <div className="flex gap-x-2">
+        <div className="hidden my-4 sm:flex gap-x-2 justify-between">
+          <div className="flex flex-wrap gap-y-2 gap-x-2">
             <button
               onClick={() => handleSuggestionClick("professional summary")}
               className="px-2 py-1 rounded-lg outline outline-neutral-800 hover:bg-slate-800 text-sm text-foreground flex items-center gap-1"

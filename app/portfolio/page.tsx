@@ -6,12 +6,10 @@ import xprt from "../../public/xprt-web-min.png";
 import prosoft from "../../public/prosoft-web-min.png";
 import harts from "../../public/hartshollergraphics-web-min.png";
 import olokun from "../../public/olokun-web.webp";
-import { Sidebar } from "../../components/Sidebar";
 
 export default function Portfolio() {
   return (
     <div className="flex min-h-screen bg-zinc-50 font-sans dark:bg-black">
-      <Sidebar />
       <main className="flex min-h-screen grow flex-col items-center gap-12 py-24 px-16 bg-white dark:bg-black sm:items-start">
         <div>
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
