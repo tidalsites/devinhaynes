@@ -138,7 +138,7 @@ export default function Chat() {
         </div>
       ) : null}
       {/* Messages area - scrollable */}
-      <div className={"overflow-auto"}>
+      <div className="overflow-auto">
         <div className="max-w-4xl w-full mx-auto p-4 flex flex-col gap-y-8">
           {messages.map((message) => (
             <div key={message.id}>
@@ -173,7 +173,7 @@ export default function Chat() {
       </div>
 
       {/* Input area - fixed at bottom */}
-      <div className="max-w-4xl w-full mx-auto mt-auto sm:p-4">
+      <div className="max-w-4xl w-full mx-auto mt-auto sm:p-4 sticky bottom-0">
         {messages.length > 0 && (
           <button
             onClick={resetChat}
