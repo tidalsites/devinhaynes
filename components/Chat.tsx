@@ -222,7 +222,7 @@ export default function Chat() {
             >
               <textarea
                 placeholder="Ask your questions here"
-                className={`rounded-2xl px-4 py-2 outline-1 outline-neutral-800 resize-none grow field-sizing-content`}
+                className="rounded-2xl px-4 py-2 bg-neutral-900 outline-1 outline-neutral-800 resize-none grow field-sizing-content"
                 ref={inputRef}
                 onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                   setInput(e.currentTarget.value)
@@ -240,7 +240,7 @@ export default function Chat() {
                 </button>
               ) : (
                 <button
-                  className="text-neutral-400 rounded-full h-10 w-10 shrink-0 outline-1 outline-neutral-800 grid place-content-center hover:bg-slate-800 hover:text-foreground"
+                  className="text-neutral-400 bg-neutral-900 rounded-full h-10 w-10 shrink-0 outline-1 outline-neutral-800 grid place-content-center hover:bg-slate-800 hover:text-foreground"
                   onClick={handleVoiceClick}
                   disabled={status === "submitted"}
                   aria-label="start voice recording"

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <main className="flex flex-col xl:grid xl:grid-cols-2 xl:grid-rows-[auto_1fr_auto] justify-between min-h-screen grow max-w-7xl gap-12 py-24 px-6 md:px-16 ">
+    <div className="flex flex-col xl:grid xl:grid-cols-2 xl:grid-rows-[auto_1fr_auto] justify-between min-h-screen grow max-w-7xl gap-12 py-24 px-6 md:px-16 ">
       <div>
         <div>
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50 mb-8">
@@ -110,7 +110,14 @@ export default function About() {
         <h2 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
           Get in Touch
         </h2>
+        <Link
+          href="/contact"
+          className="outline outline-neutral-800 bg-neutral-900 hover:bg-slate-800 px-4 py-2 rounded-xl flex gap-2 items-center w-fit"
+        >
+          Contact Me
+          <LuArrowRight />
+        </Link>
       </div>
-    </main>
+    </div>
   );
 }
