@@ -9,12 +9,12 @@ import olokun from "../../public/olokun-web.webp";
 
 export default function Portfolio() {
   return (
-    <div className="flex min-h-screen flex-col items-center gap-12 py-24 px-6 md:px-10 lg:px-12 sm:items-start">
+    <div className="flex min-h-screen flex-col items-center gap-12 py-24 px-6 md:px-10 lg:px-12 sm:items-start bg-neutral-200 dark:bg-background">
       <div>
         <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight ">
           Portfolio
         </h1>
-        <p className="max-w-md text-lg leading-8 text-zinc-400 dark:text-zinc-400">
+        <p className="max-w-md text-lg leading-8 text-neutral-700 dark:text-neutral-400">
           Here are a few website projects that I have worked on.
         </p>
       </div>
@@ -22,7 +22,7 @@ export default function Portfolio() {
         <div>
           <div className="py-2">
             <p className="text-xl uppercase -mb-1">Olokun</p>
-            <p className="text-zinc-400 text-sm mb-2">
+            <p className="text-neutral-700 dark:text-neutral-400 text-sm mb-2">
               Engineering / Government
             </p>
             <Image
@@ -35,7 +35,9 @@ export default function Portfolio() {
         <div>
           <div className="py-2">
             <p className="text-xl uppercase -mb-1">AtoB Towing Services</p>
-            <p className="text-zinc-400 text-sm mb-2">Towing</p>
+            <p className="text-neutral-700 dark:text-neutral-400 text-sm mb-2">
+              Towing
+            </p>
             <Image
               className="rounded-xl border border-neutral-800"
               src={atob}
@@ -47,7 +49,7 @@ export default function Portfolio() {
         <div>
           <div className="py-2">
             <p className="text-xl uppercase -mb-1">Concrecal Proyectos</p>
-            <p className="text-zinc-400 text-sm mb-2">
+            <p className="text-neutral-700 dark:text-neutral-400 text-sm mb-2">
               Construction / Concrete
             </p>
             <Image
@@ -62,7 +64,9 @@ export default function Portfolio() {
         <div>
           <div className="py-2">
             <p className="text-xl uppercase -mb-1">D.W. Builders</p>
-            <p className="text-zinc-400 text-sm mb-2">Construction</p>
+            <p className="text-neutral-700 dark:text-neutral-400 text-sm mb-2">
+              Construction
+            </p>
             <Image
               className="rounded-xl border border-neutral-800"
               src={dwbuilders}
@@ -75,7 +79,7 @@ export default function Portfolio() {
         <div>
           <div className="py-2">
             <p className="text-xl uppercase -mb-1">Prosoft Engineering</p>
-            <p className="text-zinc-400 text-sm mb-2">
+            <p className="text-neutral-700 dark:text-neutral-400 text-sm mb-2">
               Engineering / Government
             </p>
             <Image
@@ -88,7 +92,9 @@ export default function Portfolio() {
         <div>
           <div className="py-2">
             <p className="text-xl uppercase -mb-1">Harts Holler Graphics</p>
-            <p className="text-zinc-400 text-sm mb-2">Graphic Design</p>
+            <p className="text-neutral-700 dark:text-neutral-400 text-sm mb-2">
+              Graphic Design
+            </p>
             <Image
               className="rounded-xl border border-neutral-800"
               src={harts}
@@ -99,7 +105,9 @@ export default function Portfolio() {
         <div>
           <div className="py-2">
             <p className="text-xl uppercase -mb-1">XPRT Home Services</p>
-            <p className="text-zinc-400 text-sm mb-2">Construction</p>
+            <p className="text-neutral-700 dark:text-neutral-400 text-sm mb-2">
+              Construction
+            </p>
             <Image
               className="rounded-xl border border-neutral-800"
               src={xprt}
