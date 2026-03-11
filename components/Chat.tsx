@@ -24,6 +24,9 @@ export default function Chat() {
       .substring(2, 9)}`;
   });
 
+  const MAX_MESSAGES = 20; // Max messages before disabling input to prevent overload
+  const MAX_INPUT_LENGTH = 512; // Max characters allowed in input
+
   // simple debounce helper local to component
   const debounce = <F extends (...args: any[]) => void>(
     func: F,
@@ -66,7 +69,7 @@ export default function Chat() {
 
   // original message sender; takes the text to send so we can capture it
   const submitMessage = (text: string) => {
-    if (text.trim()) {
+    if (text.trim() && messages.length <= MAX_MESSAGES) {
       sendMessage({ text });
       inputRef.current?.focus();
     }
@@ -83,6 +86,12 @@ export default function Chat() {
 
   const handleSubmit: SubmitEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+    if (messages.length > MAX_MESSAGES) {
+      toast.error(
+        "Maximum conversation length reached. Please reset the chat to start a new conversation.",
+      );
+      return;
+    }
     debouncedSubmit(input);
     setInput("");
   };
@@ -113,12 +122,24 @@ export default function Chat() {
   const handleTextAreaReturn = (e: KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
+      if (messages.length > MAX_MESSAGES) {
+        toast.error(
+          "Maximum conversation length reached. Please reset the chat to start a new conversation.",
+        );
+        return;
+      }
       debouncedSubmit(input);
       setInput("");
     }
   };
 
   const handleSuggestionClick = (suggestion: Suggestion) => {
+    if (messages.length > MAX_MESSAGES) {
+      toast.error(
+        "Maximum conversation length reached. Please reset the chat to start a new conversation.",
+      );
+      return;
+    }
     switch (suggestion) {
       case "professional summary":
         sendMessage({
@@ -253,12 +274,19 @@ export default function Chat() {
                 }
                 onKeyDown={handleTextAreaReturn}
                 value={input}
+                maxLength={MAX_INPUT_LENGTH}
+                disabled={
+                  status === "submitted" || messages.length > MAX_MESSAGES
+                }
               />
               {input.trim() ? (
                 <button
                   type="submit"
                   className="rounded-full bg-neutral-300 dark:bg-neutral-900 outline-1 outline-neutral-500 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 p-2 w-10 h-10 grid place-content-center"
                   aria-label="submit"
+                  disabled={
+                    status === "submitted" || messages.length > MAX_MESSAGES
+                  }
                 >
                   <LuCornerDownLeft className="size-4" />
                 </button>
@@ -266,7 +294,9 @@ export default function Chat() {
                 <button
                   className="dark:text-neutral-400 bg-neutral-300 dark:bg-neutral-900 rounded-full h-10 w-10 shrink-0 outline-1 outline-neutral-500 dark:outline-neutral-800 grid place-content-center hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300"
                   onClick={handleVoiceClick}
-                  disabled={status === "submitted"}
+                  disabled={
+                    status === "submitted" || messages.length > MAX_MESSAGES
+                  }
                   aria-label="start voice recording"
                 >
                   <LuMic className="size-4" />
@@ -275,7 +305,17 @@ export default function Chat() {
             </form>
           </div>
         )}
-
+        {inputRef.current?.textLength === MAX_INPUT_LENGTH && (
+          <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-1">
+            Maximum input length reached
+          </p>
+        )}
+        {messages.length > 2 && (
+          <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-1">
+            For best performance, please keep conversations under {MAX_MESSAGES}{" "}
+            messages.
+          </p>
+        )}
         <div className="hidden my-4 sm:flex gap-x-2 justify-between">
           <div className="flex flex-wrap gap-y-2 gap-x-2">
             <button
