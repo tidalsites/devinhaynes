@@ -6,6 +6,13 @@ import xprt from "../../public/xprt-web-min.png";
 import prosoft from "../../public/prosoft-web-min.png";
 import harts from "../../public/hartshollergraphics-web-min.png";
 import olokun from "../../public/olokun-web.webp";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio | Devin Haynes",
+  description:
+    "Explore my portfolio showcasing a variety of website projects I've worked on, demonstrating my skills in web development and design.",
+};
 
 export default function Portfolio() {
   return (
