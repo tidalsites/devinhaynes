@@ -5,11 +5,11 @@ import {
 } from "@aws-sdk/client-bedrock-agent-runtime";
 
 const bedrockAgentClient = new BedrockAgentRuntimeClient({
-  region: process.env.AWS_REGION || "us-east-1",
+  region: process.env._AWS_REGION || "us-east-1",
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID || "",
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || "",
-    sessionToken: process.env.AWS_SESSION_TOKEN,
+    accessKeyId: process.env._AWS_ACCESS_KEY_ID || "",
+    secretAccessKey: process.env._AWS_SECRET_ACCESS_KEY || "",
+    sessionToken: process.env._AWS_SESSION_TOKEN,
   },
 });
 
