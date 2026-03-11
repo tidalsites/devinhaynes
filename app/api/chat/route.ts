@@ -1,4 +1,5 @@
 import { sendMessageToBedrockAgent } from "@/lib/services/bedrock";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { UIMessage } from "ai";
 
 type RequestData = {
@@ -6,11 +7,40 @@ type RequestData = {
   sessionId?: string;
 };
 
+// Rate limit configuration: 20 requests per minute per IP
+const RATE_LIMIT_CONFIG = {
+  limit: 20,
+  window: 60000, // 1 minute
+};
+
 export async function POST(req: Request) {
   try {
-    const { messages, sessionId }: RequestData = await req.json();
+    // Check rate limit
+    const clientIp = getClientIp(req);
+    const rateLimitResult = rateLimit(clientIp, RATE_LIMIT_CONFIG);
 
-    console.log(`Message: \n ${JSON.stringify(messages)}`);
+    if (!rateLimitResult.success) {
+      return new Response(
+        JSON.stringify({
+          error: "Rate limit exceeded",
+          message: "Too many requests. Please try again later.",
+          retryAfter: Math.ceil(
+            (rateLimitResult.resetTime - Date.now()) / 1000,
+          ),
+        }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "Retry-After": Math.ceil(
+              (rateLimitResult.resetTime - Date.now()) / 1000,
+            ).toString(),
+          },
+        },
+      );
+    }
+
+    const { messages, sessionId }: RequestData = await req.json();
 
     // Extract the last user message
     const lastMessage = messages[messages.length - 1];
@@ -34,7 +64,6 @@ export async function POST(req: Request) {
     };
 
     const response = await sendMessageToBedrockAgent(messageText, agentConfig);
-    console.log(response);
 
     return new Response(
       JSON.stringify({

@@ -52,6 +52,13 @@ export function useChat(sessionId?: string): UseChatReturn {
         });
 
         if (!response.ok) {
+          if (response.status === 429) {
+            const retryAfter = response.headers.get("Retry-After");
+            const errorMessage = retryAfter
+              ? `Rate limit exceeded. Please try again after ${retryAfter} seconds.`
+              : "Rate limit exceeded. Please try again later.";
+            throw new Error(errorMessage);
+          }
           const errorData = await response.json().catch(() => ({}));
           throw new Error(
             errorData.message || `HTTP error! status: ${response.status}`,

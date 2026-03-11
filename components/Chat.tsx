@@ -12,6 +12,7 @@ import {
 } from "react";
 import { LuMic, LuCheck, LuX, LuCornerDownLeft, LuTrash } from "react-icons/lu";
 import { Message } from "./Message";
+import { toast } from "react-toastify";
 
 type Suggestion = "professional summary" | "hobbies" | "contact";
 
@@ -22,6 +23,18 @@ export default function Chat() {
       .toString(36)
       .substring(2, 9)}`;
   });
+
+  // simple debounce helper local to component
+  const debounce = <F extends (...args: any[]) => void>(
+    func: F,
+    delay: number,
+  ) => {
+    let timer: ReturnType<typeof setTimeout>;
+    return (...args: Parameters<F>) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => func(...args), delay);
+    };
+  };
 
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -44,24 +57,34 @@ export default function Chat() {
   const conversationEndRef = useRef<HTMLDivElement>(null);
 
   if (error) {
-    console.error(error);
+    toast.error(error.message);
   }
 
   if (audioError) {
     console.error("Audio error:", audioError);
   }
 
-  const submitMessage = () => {
-    if (input.trim()) {
-      sendMessage({ text: input });
-      setInput("");
+  // original message sender; takes the text to send so we can capture it
+  const submitMessage = (text: string) => {
+    if (text.trim()) {
+      sendMessage({ text });
       inputRef.current?.focus();
     }
   };
 
+  // debounced version to avoid rapid-fire submissions
+  const debouncedSubmit = useRef(
+    debounce((text: string) => {
+      submitMessage(text);
+      // clear after scheduling the send so UI stays responsive
+      setInput("");
+    }, 300),
+  ).current;
+
   const handleSubmit: SubmitEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    submitMessage();
+    debouncedSubmit(input);
+    setInput("");
   };
 
   const handleVoiceClick = () => {
@@ -90,7 +113,8 @@ export default function Chat() {
   const handleTextAreaReturn = (e: KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      submitMessage();
+      debouncedSubmit(input);
+      setInput("");
     }
   };
 
