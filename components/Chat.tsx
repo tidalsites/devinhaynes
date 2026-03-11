@@ -171,11 +171,11 @@ export default function Chat() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col justify-between h-full w-full">
+    <div className="flex flex-col justify-between h-[calc(100vh-61px)] md:h-screen sm:justify-center w-full">
       {showCentered ? (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:relative sm:translate-x-0 sm:translate-y-0 sm:top-auto sm:left-auto flex flex-col gap-2 justify-center w-fit max-w-4xl mx-auto h-fit text-4xl text-center mb-4 md:mb-24">
           <h1 className="w-fit text-4xl mx-auto font-semibold leading-10 tracking-tight ">
-            Hi, I'm Devin.
+            Hi, I'm Devin's AI Assistant.
           </h1>
           <p className="w-[calc(100vw-4rem)] max-w-md text-lg leading-8 text-neutral-800 dark:text-neutral-300">
             What would you like to know?
@@ -183,7 +183,7 @@ export default function Chat() {
         </div>
       ) : null}
       {/* Messages area - scrollable */}
-      <div className="overflow-auto">
+      <div className="overflow-auto pt-16 overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         <div className="max-w-4xl w-full mx-auto p-4 flex flex-col gap-y-8">
           {messages.map((message) => (
             <div key={message.id}>
@@ -218,7 +218,7 @@ export default function Chat() {
       </div>
 
       {/* Input area - fixed at bottom */}
-      <div className="max-w-4xl w-full mx-auto mt-auto sm:p-4 sticky bottom-0">
+      <div className="max-w-4xl w-full mx-auto sm:p-4 sticky bottom-0">
         {messages.length > 0 && (
           <button
             onClick={resetChat}
@@ -310,7 +310,7 @@ export default function Chat() {
             Maximum input length reached
           </p>
         )}
-        {messages.length > 2 && (
+        {messages.length > MAX_MESSAGES && (
           <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-1">
             For best performance, please keep conversations under {MAX_MESSAGES}{" "}
             messages.
