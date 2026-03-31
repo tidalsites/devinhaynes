@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 }
 
 data "aws_caller_identity" "current" {}
@@ -35,11 +35,27 @@ data "aws_iam_policy_document" "agent_permissions" {
       "arn:${data.aws_partition.current.partition}:bedrock:${data.aws_region.current.region}::foundation-model/${var.foundation_model}",
     ]
   }
+
+  statement {
+    actions = [
+      "bedrock:Retrieve",
+      "bedrock:RetrieveAndGenerate"
+    ]
+    resources = [
+      aws_bedrockagent_knowledge_base.kb.arn
+    ]
+  }
 }
 
 resource "aws_iam_role" "agent_role" {
   assume_role_policy = data.aws_iam_policy_document.agent_trust.json
-  name_prefix        = "AmazonBedrockExecutionRoleForAgents_"
+  name_prefix        = "BedrockAgentExecRole_"
+
+  tags = {
+    Name        = "BedrockAgentExecRole"
+    Environment = var.environment
+    Project     = "devinhaynes.com"
+  }
 }
 
 resource "aws_iam_role_policy" "agent_policy" {
@@ -48,10 +64,10 @@ resource "aws_iam_role_policy" "agent_policy" {
 }
 
 resource "aws_bedrockagent_agent" "agent" {
-  agent_name                  = "devinhaynes-bot"
+  agent_name                  = "${var.agent_name}-${var.environment}"
   agent_resource_role_arn     = aws_iam_role.agent_role.arn
-  idle_session_ttl_in_seconds = 600
-  instruction                 = file("${path.module}/agent_instruction.txt")
+  idle_session_ttl_in_seconds = var.idle_session_ttl
+  instruction                 = file("${path.module}/agent_instructions.txt")
   foundation_model            = var.foundation_model
 }
 
