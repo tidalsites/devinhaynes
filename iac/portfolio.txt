@@ -1,0 +1,453 @@
+﻿Document Topic: Devin Haynes Project Portfolio
+Content Type: Websites, web applications, and AI software projects
+This document describes projects built by Devin Haynes.
+Each section summarizes one project from Devin's portfolio.
+
+
+# Portfolio Index
+Website Projects:
+- devinhaynes.com
+- Olokun LLC
+- Prosoft Engineering
+- Concrecal Proyectos e Ingeniería
+- XPRT Home
+- Alysons Towing
+- D.W. Builders
+- Harts Holler Graphics
+
+
+Web Applications:
+- FoursquareCalc
+
+
+AI Projects:
+- Clara AI Assistant
+
+
+________________
+
+
+Project
+Project Name: devinhaynes.com
+Project Category: Web Application
+Industry / Domain: Personal Portfolio
+Status: Active
+Project Metadata:
+keywords: portfolio website, AI website chatbot, personal developer site, AI assistant website
+topics: web development, conversational interface, portfolio site
+common_questions:
+* What projects has Devin built?
+* Does Devin have a portfolio website?
+* Has Devin built any AI chatbots?
+________________
+
+
+Project Overview
+Summary:
+Devin's personal portfolio website featuring an AI-powered chatbot that answers questions about his experience and projects.
+Purpose:
+Provide an interactive way for visitors to explore Devin's background, portfolio, and technical work.
+________________
+
+
+Website or Product Context
+Target Users:
+Employers, collaborators, and visitors exploring Devin's work.
+Problem Solved:
+Traditional portfolio websites require manual navigation. This site allows users to learn about Devin through conversation.
+Outcome:
+* conversational website interface
+* interactive portfolio exploration
+* AI-assisted navigation
+________________
+
+
+Devin's Role
+Designed and built the entire platform including the website interface, chatbot system, and knowledge base architecture.
+________________
+
+
+Technical Implementation
+Core Technologies:
+* Next.js
+* JavaScript
+* AWS Bedrock
+Key Technical Work:
+* conversational chatbot interface
+* retrieval-based knowledge system
+* modern web performance architecture
+________________
+
+
+Project
+Project Name: Olokun LLC
+Project Category: Website
+Industry / Domain: Government Contracting
+Status: Completed
+Project Metadata:
+keywords: government contractor website, defense contractor site, next.js website
+topics: business website, performance optimized websites
+common_questions:
+* Has Devin built government contractor websites?
+* What Next.js websites has Devin built?
+________________
+
+
+Project Overview
+Summary:
+A full modern website built for Olokun LLC, a government contractor providing engineering, IT, consulting, and logistics services to Navy customers.
+Purpose:
+Create a professional online presence that clearly communicates services and capabilities.
+________________
+
+
+Website or Product Context
+Target Users:
+Government partners and organizations seeking engineering or consulting services.
+Problem Solved:
+The company needed a modern website that clearly presented services and capabilities.
+Outcome:
+* professional business presence
+* high-performance website architecture
+* improved presentation of services
+________________
+
+
+Devin's Role
+Designed and developed the complete website including custom graphics, layout, and deployment.
+________________
+
+
+Technical Implementation
+Core Technologies:
+* Next.js
+* React
+* JavaScript
+Key Technical Work:
+* custom graphical elements
+* modern responsive layout
+* performance optimization
+Notable Achievement:
+* 100% Google Lighthouse performance scores across 13 pages
+Project URL:
+https://olokunllc.com
+________________
+
+
+Project
+Project Name: Prosoft Engineering Website
+Project Category: Website
+Industry / Domain: Government IT Services
+Status: Completed
+Project Metadata:
+keywords: government IT contractor website, react business website
+topics: government services websites
+common_questions:
+* What business websites has Devin built?
+________________
+
+
+Project Overview
+Summary:
+A modern website for Prosoft Engineering, a government contractor specializing in IT services for government organizations.
+Purpose:
+Provide a professional web presence to communicate the company's IT services.
+________________
+
+
+Website or Product Context
+Target Users:
+Government agencies and organizations seeking IT services.
+Outcome:
+* clear service presentation
+* modern responsive layout
+________________
+
+
+Devin's Role
+Handled development and deployment of the website.
+________________
+
+
+Technical Implementation
+Core Technologies:
+* React
+* JavaScript
+Infrastructure:
+* Amazon S3 static hosting
+Project URL:
+http://prosoft-staging.s3-website-us-east-1.amazonaws.com/
+________________
+
+
+Project
+Project Name: FoursquareCalc
+Project Category: Web Application
+Industry / Domain: Real Estate Investment
+Status: Active
+Project Metadata:
+keywords: real estate investment calculator, ROI calculator web app
+topics: financial tools, investment analysis
+common_questions:
+* Has Devin built any financial tools?
+* What web applications has Devin created?
+________________
+
+
+Project Overview
+Summary:
+A web application that helps investors calculate potential ROI for real estate investment properties.
+Purpose:
+Provide a simple tool for evaluating real estate investment opportunities.
+________________
+
+
+Website or Product Context
+Target Users:
+Real estate investors and property buyers.
+Problem Solved:
+Investment calculations are often complex and time-consuming.
+Outcome:
+* simplified investment analysis
+* quick ROI estimation
+________________
+
+
+Devin's Role
+Designed and built the full web application.
+________________
+
+
+Technical Implementation
+Core Technologies:
+* JavaScript
+* web application architecture
+Key Technical Work:
+* financial calculation logic
+* user-friendly interface
+Project URL:
+https://foursquarecalc.com
+________________
+
+
+Project
+Project Name: Clara AI Assistant
+Project Category: AI Project
+Industry / Domain: Artificial Intelligence
+Status: Prototype
+Project Metadata:
+keywords: AI chatbot framework, customizable AI assistant
+topics: conversational AI, AI tools
+common_questions:
+* Has Devin built any AI systems?
+* What AI tools has Devin created?
+________________
+
+
+Project Overview
+Summary:
+An AI chatbot assistant designed to be easily customizable for different customer needs and use cases.
+Purpose:
+Provide a flexible framework for building conversational AI assistants.
+________________
+
+
+Website or Product Context
+Target Users:
+Businesses interested in integrating conversational AI tools.
+Outcome:
+* customizable chatbot framework
+* adaptable AI assistant design
+________________
+
+
+Devin's Role
+Designed the chatbot architecture and customization system.
+________________
+
+
+Technical Implementation
+Core Technologies:
+* conversational AI models
+* web interface development
+Key Technical Work:
+* chatbot framework design
+* customizable AI interaction workflows
+________________
+
+
+Project
+Project Name: Concrecal Proyectos e Ingeniería
+Project Category: Website
+Industry / Domain: Construction
+Status: Completed
+________________
+
+
+Project Overview
+Summary:
+A modern website and updated branding for a concrete engineering company based in the Dominican Republic.
+Purpose:
+Provide a modern web presence and refreshed visual identity.
+________________
+
+
+Website or Product Context
+Target Users:
+Construction clients and project partners.
+Outcome:
+* modern website design
+* improved company branding
+________________
+
+
+Devin's Role
+Developed the website and redesigned the company logo.
+________________
+
+
+Technical Implementation
+Core Technologies:
+* React
+* JavaScript
+Project URL:
+http://concrecal-staging.s3-website-us-east-1.amazonaws.com/
+________________
+
+
+Project
+Project Name: XPRT Home
+Project Category: Website
+Industry / Domain: Home Renovation Services
+Status: Completed
+________________
+
+
+Project Overview
+Summary:
+A business website for a home renovation and construction services company in the Dominican Republic.
+Purpose:
+Provide an online presence for marketing renovation and building services.
+________________
+
+
+Website or Product Context
+Target Users:
+Homeowners seeking renovation or construction services.
+Outcome:
+* improved business visibility
+* modern website layout
+________________
+
+
+Devin's Role
+Developed the full website.
+________________
+
+
+Technical Implementation
+Core Technologies:
+* React
+* JavaScript
+________________
+
+
+Project
+Project Name: Alysons Towing (formerly AtoB Towing)
+Project Category: Website
+Industry / Domain: Towing Services
+Status: Completed
+________________
+
+
+Project Overview
+Summary:
+A towing company website featuring a location-based map system to help customers quickly request service.
+Purpose:
+Allow customers to easily locate and contact towing services.
+________________
+
+
+Website or Product Context
+Target Users:
+Drivers in need of towing services.
+Outcome:
+* easier service discovery
+* quick access to towing assistance
+________________
+
+
+Devin's Role
+Designed and built the full website including location-based functionality.
+________________
+
+
+Technical Implementation
+Core Technologies:
+* React
+* JavaScript
+Key Technical Work:
+* map integration for locating customers
+Project URL:
+https://atobtowing.netlify.app/
+________________
+
+
+Project
+Project Name: D.W. Builders
+Project Category: Website
+Industry / Domain: Construction
+Status: Completed
+________________
+
+
+Project Overview
+Summary:
+A simple business website created to provide online visibility for a local general contractor.
+Purpose:
+Allow potential customers to find and contact the contractor online.
+________________
+
+
+Devin's Role
+Developed the full website.
+________________
+
+
+Technical Implementation
+Core Technologies:
+* HTML
+* CSS
+* JavaScript
+________________
+
+
+Project
+Project Name: Harts Holler Graphics
+Project Category: Website
+Industry / Domain: Printing and Graphics
+Status: Completed
+________________
+
+
+Project Overview
+Summary:
+A website for a local print and decal company showcasing services and products.
+Purpose:
+Provide an online presence for marketing print and graphic services.
+________________
+
+
+Devin's Role
+Developed the full website.
+________________
+
+
+Technical Implementation
+Core Technologies:
+* React
+* JavaScript
+Infrastructure:
+* Amazon S3 static hosting
+Project URL:
+http://hartshollergraphics-staging.s3-website-us-east-1.amazonaws.com/

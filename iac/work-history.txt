@@ -1,0 +1,201 @@
+Devin Haynes — Work History
+Location: Mountain Home, Arkansas
+
+This document lists the professional work history of Devin Haynes.
+Each section describes a previous employer, role, and responsibilities.
+
+Employer Record
+
+Company: Tidal Sites
+Role: Full-Stack Developer / Owner
+Employment Type: Freelance
+Dates: April 2019 – Present
+Industry: Web Development
+
+Summary:
+Tidal Sites is Devin Haynes' freelance web development business focused on building custom websites and web applications.
+
+Responsibilities:
+
+Designed and developed custom websites and web applications.
+Built projects using modern JavaScript frameworks and responsive design practices.
+Managed the full development lifecycle from design to deployment.
+Deployed and maintained applications within AWS environments.
+
+Technologies Used:
+
+JavaScript
+Typescript
+React
+Next.js
+HTML
+CSS
+AWS
+Vercel
+
+Employer Record
+
+Company: Impera LLC
+Role: Cloud Developer
+Employment Type: Contract
+Dates: October 2025 – February 2026
+Industry: Software Consulting
+
+Summary:
+Worked as a cloud developer building and improving AI-enabled software systems.
+
+Responsibilities:
+
+Built an AI chatbot prototype for an insurance client.
+Developed a custom React front-end interface.
+Re-engineered backend AI architecture.
+Created a reusable project template and CI/CD pipeline.
+Improved system performance and monitoring for a financial institution.
+
+Technologies Used:
+
+React
+JavaScript
+Typescript
+cloud infrastructure
+CI/CD pipelines
+message queue systems
+AWS
+AI
+
+Employer Record
+
+Company: Huntington Ingalls Industries
+Role: Software Engineer
+Dates: January 2024 – October 2024
+Industry: Defense Technology
+
+Summary:
+Developed mission control software for autonomous maritime vessels.
+
+Responsibilities:
+
+Developed and maintained a React-based user interface.
+Supported mission planning and real-time vessel control systems.
+Integrated image recognition data into operational dashboards.
+Participated in operational training exercises supporting live missions.
+
+Technologies Used:
+
+React
+JavaScript
+Typescript
+Webhooks
+Java
+real-time systems
+image recognition integration
+
+Employer Record
+
+Company: Decisions LLC
+Role: Product Engineer
+Dates: February 2023 – October 2023
+Industry: Software Platform Development
+
+Summary:
+Worked on enterprise software platform improvements and integrations.
+
+Responsibilities:
+
+Engineered a custom application marketplace to decentralize features from the core platform.
+Integrated React user interfaces with .NET backend systems.
+Implemented integrations with third-party APIs.
+
+Technologies Used:
+
+React
+Typescript
+.NET APIs
+ArcGIS mapping
+Moneris payment gateway
+
+Employer Record
+
+Company: NU Borders LLC
+Role: Full-Stack Software Developer
+Dates: January 2022 – August 2022
+Industry: Software Development
+
+Summary:
+Worked on a full-stack MERN web application.
+
+Responsibilities:
+
+Built both frontend and backend features.
+Developed components using React.
+Containerized backend services to improve deployment reliability.
+
+Technologies Used:
+
+MongoDB
+Express
+React
+Typescript
+Node.js
+Docker
+
+Employer Record
+
+Company: United States Department of State
+Role: Full-Stack Developer
+Dates: September 2019 – September 2021
+Industry: Government Technology
+
+Summary:
+Modernized legacy government software systems.
+
+Responsibilities:
+
+Migrated a legacy PHP application into modern PERN-stack architecture.
+Served as subject-matter expert for multiple Node.js / React applications.
+Supported production deployments and bug fixes.
+
+Technologies Used:
+
+PostgreSQL
+Express
+React
+Typescript
+Node.js
+PHP
+
+Employer Record
+
+Company: United States Navy
+Role: Information Systems Technician
+Dates: November 2009 – September 2017
+Industry: Military IT Operations
+
+Summary:
+Managed communications and IT infrastructure supporting naval operations.
+
+Responsibilities:
+
+Maintained Linux and Windows server environments.
+Managed DNS, email, networking, and cryptographic systems.
+Troubleshot outages affecting operational communication systems.
+Deployed and operated a mobile communications platform in remote environments.
+
+Technologies Used:
+
+Linux
+Windows Server
+DNS
+CISCO
+networking infrastructure
+cryptographic systems
+
+Work History Summary
+
+Total IT Experience: 16+ years
+Primary Areas of Experience:
+full-stack web development
+modern JavaScript frameworks
+cloud deployment and infrastructure
+enterprise software systems
+government and defense technology systems

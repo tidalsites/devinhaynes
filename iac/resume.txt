@@ -1,0 +1,48 @@
+Devin Haynes 
+Mountain Home, AR 
+linkedin.com/in/devin-haynes github.com/devinhaynes devinhaynes.com
+
+Software Engineer with 16+ years in IT and a background in full-stack web development. Experienced maintaining websites and applications, working with vanilla HTML, CSS, JavaScript, along with frameworks such as React, Next.js, and Node.js. Comfortable collaborating in small teams, and delivering practical solutions within Agile workflows, with hands-on experience using cloud-based deployment tools.
+Professional Experience
+Full-Stack Developer/Owner - Tidal Sites (Freelance)
+Apr 2019 – Present
+* Designed and developed custom websites and web applications using modern JavaScript frameworks and responsive design principles.
+* Managed full development lifecycle from initial design through deployment and maintenance of applications in AWS environments.
+Cloud Developer - Impera LLC (Contract)
+Oct 2025 – Feb 2026
+* Built an AI chatbot prototype for an insurance client, developing custom React front-end and re-engineering backend AI architecture.
+* Created a reusable project template and CI/CD pipeline to streamline setup, enforce consistency, and reduce configuration errors.
+* Optimized system design for message queue routing system to improve performance, logging, and metrics for a financial institution.
+Software Engineer - Huntington Ingalls Industries
+Jan 2024 – Oct 2024
+* Developed and maintained a React-based user interface for mission planning and real-time control of autonomous unmanned surface and sub-surface maritime vessels.
+* Integrated image recognition data from backend services into operational dashboards, supporting navigation, situational awareness, and mission execution.
+* Participated in training exercises in an operations role, assisting with live mission control and validating system behavior under realistic conditions.
+
+
+Product Engineer - Decisions LLC
+Feb 2023 – Oct 2023
+* Engineered custom App store to decentralize features from main software, leading to enhanced performance of platform.
+* Integrated React UI with various .NET and third-party API’s, such as arcGIS for map functionality and Moneris for payment gateway integration.
+Full-Stack Software Developer - NU Borders LLC
+Jan 2022 – Aug 2022
+* Developed features for a MERN-stack web application, contributing to frontend and backend functionality.
+* Containerized backend services to improve deployment reliability and reduce environment-related failures.
+Full-Stack Developer - U.S. State Dept.
+Sep 2019 – Sep 2021
+* Modernized legacy PHP application into PERN-stack systems, improving maintainability, performance, and user experience.
+* Served as subject-matter expert for multiple Node.js/React applications, supporting feature development, bug fixes, and production issues.
+Information Systems Technician - U.S. Navy
+Nov 2009 – Sep 2017
+* Managed on-premises IP services for naval units, troubleshooting outages across Linux/Windows servers, DNS, email, networking, and cryptographic systems.
+* Deployed, operated, and maintained a mobile communications platform, handling setup, teardown, system monitoring, and troubleshooting in remote environments.
+Technical Skills
+* JavaScript, React, Node.js, HTML
+* AWS & Azure Cloud Services 
+* Git and modern development workflows
+* SQL and NoSQL databases
+* Linux environments and deployment workflows
+* CI/CD and application deployment
+Education & Certifications
+B.S. in Computer Science (Software Development) - ECPI University
+AWS Certified Cloud Practitioner
