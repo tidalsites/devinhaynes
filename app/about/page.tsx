@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className=" min-h-screen grow bg-neutral-200 dark:bg-background">
+    <div className=" min-h-screen grow bg-neutral-300 dark:bg-background">
       <div className="flex flex-col xl:grid xl:grid-cols-2 xl:grid-rows-[auto_1fr_auto] justify-between max-w-7xl gap-12 py-24 px-6 md:px-16">
         <div>
           <div>
@@ -93,14 +93,14 @@ export default function About() {
             <a
               href="https://github.com/devinhaynes"
               target="_blank"
-              className="outline outline-neutral-500 dark:outline-neutral-800 bg-neutral-300 dark:bg-neutral-900 hover:bg-slate-500 hover:text-neutral-300 transition-colors hover:dark:bg-slate-800 px-4 py-2 rounded-xl flex gap-2 items-center"
+              className="outline outline-neutral-500 dark:outline-neutral-800 bg-neutral-200 dark:bg-neutral-900 hover:bg-slate-500 hover:text-neutral-300 transition-colors hover:dark:bg-slate-800 px-4 py-2 rounded-xl flex gap-2 items-center"
             >
               <LuGithub />
               Github
             </a>
             <Link
               href="/portfolio"
-              className="outline outline-neutral-500 dark:outline-neutral-800 bg-neutral-300 dark:bg-neutral-900 hover:bg-slate-500 hover:text-neutral-300 transition-colors hover:dark:bg-slate-800 px-4 py-2 rounded-xl flex gap-2 items-center"
+              className="outline outline-neutral-500 dark:outline-neutral-800 bg-neutral-200 dark:bg-neutral-900 hover:bg-slate-500 hover:text-neutral-300 transition-colors hover:dark:bg-slate-800 px-4 py-2 rounded-xl flex gap-2 items-center"
             >
               Portfolio
               <LuArrowRight />
@@ -113,7 +113,7 @@ export default function About() {
           </h2>
           <Link
             href="/contact"
-            className="outline outline-neutral-500 dark:outline-neutral-800 bg-neutral-300 dark:bg-neutral-900 hover:bg-slate-500 hover:text-neutral-300 transition-colors hover:dark:bg-slate-800 px-4 py-2 rounded-xl flex gap-2 items-center w-fit"
+            className="outline outline-neutral-500 dark:outline-neutral-800 bg-neutral-200 dark:bg-neutral-900 hover:bg-slate-500 hover:text-neutral-300 transition-colors hover:dark:bg-slate-800 px-4 py-2 rounded-xl flex gap-2 items-center w-fit"
           >
             Contact Me
             <LuArrowRight />

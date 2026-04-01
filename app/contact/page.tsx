@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <div className="w-full h-full min-h-[calc(100vh-61px)] grid place-content-center bg-neutral-200 dark:bg-background">
+    <div className="w-full h-full min-h-[calc(100vh-61px)] grid place-content-center bg-neutral-300 dark:bg-background">
       <div className="flex flex-col gap-4 px-16 py-8 border border-neutral-400 dark:border-neutral-800 rounded-md bg-neutral-300 dark:bg-neutral-900">
         <h1 className="text-4xl font-bold">Contact Me</h1>
         <ContactForm />
