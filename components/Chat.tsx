@@ -320,19 +320,19 @@ export default function Chat() {
           <div className="flex flex-wrap gap-y-2 gap-x-2">
             <button
               onClick={() => handleSuggestionClick("professional summary")}
-              className="px-2 py-1 rounded-lg bg-neutral-200 outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
+              className="px-2 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-900 outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
             >
               <span>Summarize Devin's professional career</span>
             </button>
             <button
               onClick={() => handleSuggestionClick("hobbies")}
-              className="px-2 py-1 rounded-lg bg-neutral-200 outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
+              className="px-2 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-900 outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
             >
               <span>What are Devin's hobbies?</span>
             </button>
             <button
               onClick={() => handleSuggestionClick("contact")}
-              className="px-2 py-1 rounded-lg bg-neutral-200 outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
+              className="px-2 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-900 outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
             >
               <span>How can I contact Devin?</span>
             </button>
