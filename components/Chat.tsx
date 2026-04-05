@@ -222,7 +222,7 @@ export default function Chat() {
         {messages.length > 0 && (
           <button
             onClick={resetChat}
-            className="px-2 py-1 rounded-lg dark:bg-neutral-800 outline outline-neutral-500 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-red-900 text-sm text-foreground flex items-center gap-1 ml-auto mb-4"
+            className="px-2 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-800 outline outline-neutral-500 dark:outline-neutral-800 hover:bg-slate-500 hover:text-neutral-300 hover:dark:bg-red-900 text-sm text-foreground flex items-center gap-1 ml-auto mb-4"
           >
             <span>Reset Chat</span>
             <LuTrash className="size-4 ml-1" />
@@ -267,7 +267,7 @@ export default function Chat() {
             >
               <textarea
                 placeholder="Ask your questions here"
-                className="rounded-2xl px-4 py-2 bg-neutral-300 dark:bg-neutral-900 outline-1 outline-neutral-500 dark:outline-neutral-800 resize-none grow field-sizing-content"
+                className="rounded-2xl px-4 py-2 bg-neutral-100 dark:bg-neutral-900 outline-1 outline-neutral-500 dark:outline-neutral-800 resize-none grow field-sizing-content"
                 ref={inputRef}
                 onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                   setInput(e.currentTarget.value)
@@ -282,7 +282,7 @@ export default function Chat() {
               {input.trim() ? (
                 <button
                   type="submit"
-                  className="rounded-full bg-neutral-300 dark:bg-neutral-900 outline-1 outline-neutral-500 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 p-2 w-10 h-10 grid place-content-center"
+                  className="rounded-full bg-neutral-100 dark:bg-neutral-900 outline-1 outline-neutral-500 dark:outline-neutral-800 hover:bg-slate-500 hover:text-neutral- hover:dark:bg-slate-800 hover:text-neutral-300 p-2 w-10 h-10 grid place-content-center"
                   aria-label="submit"
                   disabled={
                     status === "submitted" || messages.length > MAX_MESSAGES
@@ -292,7 +292,7 @@ export default function Chat() {
                 </button>
               ) : (
                 <button
-                  className="dark:text-neutral-400 bg-neutral-300 dark:bg-neutral-900 rounded-full h-10 w-10 shrink-0 outline-1 outline-neutral-500 dark:outline-neutral-800 grid place-content-center hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300"
+                  className="dark:text-neutral-400 bg-neutral-100 dark:bg-neutral-900 rounded-full h-10 w-10 shrink-0 outline-1 outline-neutral-500 dark:outline-neutral-800 grid place-content-center hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300"
                   onClick={handleVoiceClick}
                   disabled={
                     status === "submitted" || messages.length > MAX_MESSAGES
@@ -306,7 +306,7 @@ export default function Chat() {
           </div>
         )}
         {inputRef.current?.textLength === MAX_INPUT_LENGTH && (
-          <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-1">
+          <p className="text-xs text-neutral-800 dark:text-neutral-500 mt-1">
             Maximum input length reached
           </p>
         )}
@@ -320,19 +320,19 @@ export default function Chat() {
           <div className="flex flex-wrap gap-y-2 gap-x-2">
             <button
               onClick={() => handleSuggestionClick("professional summary")}
-              className="px-2 py-1 rounded-lg outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
+              className="px-2 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-900 outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
             >
               <span>Summarize Devin's professional career</span>
             </button>
             <button
               onClick={() => handleSuggestionClick("hobbies")}
-              className="px-2 py-1 rounded-lg outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
+              className="px-2 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-900 outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
             >
               <span>What are Devin's hobbies?</span>
             </button>
             <button
               onClick={() => handleSuggestionClick("contact")}
-              className="px-2 py-1 rounded-lg outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
+              className="px-2 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-900 outline outline-neutral-400 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 text-sm text-foreground flex items-center gap-1"
             >
               <span>How can I contact Devin?</span>
             </button>

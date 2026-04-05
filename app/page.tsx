@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex items-center sm:justify-center pb-8 h-[calc(100vh-61px)] md:h-screen px-6 md:px-16 bg-neutral-200 dark:bg-background">
+    <div className="flex items-center sm:justify-center pb-8 h-[calc(100vh-61px)] md:h-screen px-6 md:px-16 bg-neutral-300 dark:bg-background">
       <Chat />
     </div>
   );
