@@ -222,7 +222,7 @@ export default function Chat() {
         {messages.length > 0 && (
           <button
             onClick={resetChat}
-            className="px-2 py-1 rounded-lg dark:bg-neutral-800 outline outline-neutral-500 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-red-900 text-sm text-foreground flex items-center gap-1 ml-auto mb-4"
+            className="px-2 py-1 rounded-lg bg-neutral-200 dark:bg-neutral-800 outline outline-neutral-500 dark:outline-neutral-800 hover:bg-slate-500 hover:text-neutral-300 hover:dark:bg-red-900 text-sm text-foreground flex items-center gap-1 ml-auto mb-4"
           >
             <span>Reset Chat</span>
             <LuTrash className="size-4 ml-1" />
@@ -282,7 +282,7 @@ export default function Chat() {
               {input.trim() ? (
                 <button
                   type="submit"
-                  className="rounded-full bg-neutral-100 dark:bg-neutral-900 outline-1 outline-neutral-500 dark:outline-neutral-800 hover:bg-slate-500 hover:dark:bg-slate-800 hover:text-neutral-300 p-2 w-10 h-10 grid place-content-center"
+                  className="rounded-full bg-neutral-100 dark:bg-neutral-900 outline-1 outline-neutral-500 dark:outline-neutral-800 hover:bg-slate-500 hover:text-neutral- hover:dark:bg-slate-800 hover:text-neutral-300 p-2 w-10 h-10 grid place-content-center"
                   aria-label="submit"
                   disabled={
                     status === "submitted" || messages.length > MAX_MESSAGES
